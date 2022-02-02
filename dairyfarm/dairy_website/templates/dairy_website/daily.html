@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="container">
+      <!--statistics-line-->
+    <div class="row" style="margin-top:100px;">
+
+      <div class="col-md-12">
+        <p class="open-sans text-center text-capitalize text-bold black" id="statistics-line"> your daily record</p>
+        <!--cow-seprator started-->
+        <div class="cow-seprator">
+          <!--row start-->
+          <div class="row">
+            <div class="col-md-3 col-md-offset-5">
+              <div class="center-line" ></div>
+              <img src="{% static 'dairy_website/image/cow-icon.png'%} "  class="img-responsive">
+              <div class="center-line"></div ><br clear="both">
+            </div><!--col-md-2-->
+          </div><!--end row-->
+        </div><!--end cow seprator-->
+      </div><!--end col-md-12-->
+    </div><!--end row-->
+    <!--end statistics line-->
+
+      <!--row started-->
+      <!--information section-->
+      <div class=" row information-section">
+        <div class="col-md-6">
+          <!--information-box-->
+          <div class="information-box wow fadeInLeft" >
+            <img src= "{% static 'dairy_website/image/clogo.png'%}"    class="img-responsive">
+            <h3 class="popin  text-capitalize text-center orange">total animals</h3>
+            <hr>
+            <h2 class="text-center black robo-font counter">28</h2>
+          </div><!--end information box-->
+        </div><!--end col-md-6-->
+        <div class="col-md-6">
+          <!--information-box-->
+          <div class="information-box wow fadeInRight" >
+            <img src= "{% static 'dairy_website/image/bow-with-milk.jpg'%} " class="img-responsive">
+            <h3 class="popin  text-capitalize text-center orange ">Today's total milk</h3>
+            <hr>
+            <h2 class="text-center popin text-capitalize "><span class="counter">200</span> liter</h2>
+          </div><!--end information box-->
+        </div><!--end col-md-6-->
+      </div><!--information section end-->
+      <!--end row-->
+    </div><!--end container-->
+</body>
+</html>

@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Animal Detail</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'dairy_website/css/bootstrap.min.css'  %}" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{% static 'dairy_website/css/ie10-viewport-bug-workaround.css'  %}" rel="stylesheet">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <!-- Custom styles for this template -->
+     <link href="{% static 'dairy_website/css/starter-template.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins&family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato&family=Poppins&family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'dairy_website/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'dairy_website/css/animate.min.css' %}">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src= "{% static 'dairy_website../../assets/js/ie8-responsive-file-warning.js' %}"></script><![endif]-->
+    <script src="{% static 'dairy_website/js/ie-emulation-modes-warning.js' %}"></script>
+    <script
+              src="https://code.jquery.com/jquery-1.12.4.min.js"
+              integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+              crossorigin="anonymous"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body style="background-color: #e9fcf3;">
+    <div id="home-nav">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            
+          </div>
+          <!--row start-->
+          <div class="row " id="for-scroll">
+            <!--col-md-4-->
+            <div class="col-md-3" id="logo">
+              <img src="{% static 'dairy_website/image/logo8.png'%} "  class="img-responsive">
+            </div><!--end col-md-4-->
+            <!--col-md-8-->
+            <div class=" col-md-8 col-md-9 " id="col-md-9">
+              <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li class="lato-font decrease-padding "><a href="/dairy_website/goto_home" >Home</a></li>
+                  <li class="lato-font decrease-padding"><a href="/dairy_website/goto_animal_record">Animal record</a></li>
+                  <li class="lato-font decrease-padding"><a href="/dairy_website/goto_milk_record">Milk record</a></li>
+                  <li class="lato-font decrease-padding "><a href="/dairy_website/goto_ask">Ask a friend</a></li>
+                  <li class="lato-font  decrease-padding dropdown">
+                    <div class="dropdown">
+                      <button class=" dropdown-toggle text-uppercase" type="button"  id="help-btn" data-toggle="dropdown" > help
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu black" >
+                        <li ><a href="/dairy_website/goto_cattle" style="color:black;">cattle selection</a></li>
+                        <li ><a href="/dairy_website/goto_feed" style="color:black;">feed management</a></li>
+                        <li ><a href="/dairy_website/goto_housing" style="color:black;">housing methods</a></li>
+                        <li ><a href="/dairy_website/goto_milking_methods" style="color:black;">milking methods</a></li>
+                        <li ><a href="/dairy_website/goto_economic" style="color:black;">economic character</a></li>
+
+                      </ul>
+                     </div>
+                  </li>
+                  <li class="lato-font decrease-padding "><a href="/dairy_website/goto_login" >logout</a></li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div><!--end col-md-8-->
+        </div><!--end row-->
+        </div><!--end container-->
+      </nav>
+    </div><!--end home nav-->
+
+    <!--animal detail-->
+    <div class="animal-detail">
+        <!--row started-->
+        <div class="row">
+          <!--col-md-12-->
+          <div class="col-md-12">
+            <!-- welcome-->
+            <div class="welcome orange-bg gotu text-bold" style="">
+
+                <h1 style="color: #a5ccd99e;">
+                    <span class="text-capitalize">welcome &nbsp;</span>
+                    <span class="text-capitalize">{{farmer_name}} </span>
+              </h1>
+              <p class="text-capitalize text-center white popins wow fadeInUp">here you can manage your animals</p>
+            </div><!--end welcome-->
+          </div><!--end col--md-12-->
+        </div><!--end row-->
+
+
+        <!--animal-data-->
+        <div class="animal-data">
+          <!--row started-->
+          <div class="row">
+            <!--col-md-12-->
+            <div class="col--md-12">
+              <p class="open-sans text-center text-capitalize text-bold black" id="statistics-line"> enter your animal detail</p>
+              <!--cow-seprator started-->
+              <div class="cow-seprator">
+                <!--row start-->
+                <div class="row">
+                  <div class="col-md-12 col-xs-12">
+                    <div class="center-line" ></div>
+                    <img src="{% static 'dairy_website/image/cow-icon.png'%} "  class="img-responsive">
+                    <div class="center-line"></div ><br clear="both">
+                  </div><!--col-md-2-->
+                </div><!--end row-->
+              </div><!--end cow seprator-->
+            </div><!--end col-md-12-->
+          </div><!--end row-->
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="alert alert-success avro h4 text-capitalize" role="alert" id="greetings">
+                        <p style="color:green;">{{greetings}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+          <!--row started-->
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <!--information-heading-->
+                <!-- inner row-->
+                <div class="row information-heading" id="basic-heading">
+                  <div class="col-md-12 col-xs-12">
+                    <p  class="text-capitalize mon"> basic information</p>
+                  </div><!--end inner row1-->
+                  <!--end information-heading-->
+                </div><!--end row-->
+              <!--information-area-->
+              <div class="information-area" id="basic">
+                  <!--inner row-->
+                  <div class="row selection-area">
+                      <!--col-md-6-->
+                      <div class=" col-xs-10 col-md-6 col-md-offset-3  col-xs-offset-1">
+                          <h3 class=" text-capitalize avro black information-detalis-for-anima-type-mobile">what you want to add?</h3>
+                          <button id="cow-button" >cow</button>
+                          <button id="hiefer-button" >hiefer</button>
+                          <button id="calf-button" >calf</button>
+                      </div><!--end col-md-6-->
+                  </div><!--end row-->
+                  <!--add specfic animal row-->
+                  <div class="row">
+                    <h3 class=" text-capitalize avro black  text-center margin-bottom-20" id="calf-line">please enter your calf detail..</h3>
+                    <h3 class=" text-capitalize avro black  text-center margin-bottom-20" id="hiefer-line">please enter your hiefer detail..</h3>
+                    <h3 class=" text-capitalize avro black  text-center margin-bottom-20" id="cow-line">please enter your cow detail..</h3>
+                  </div><!--end row specfic animal-->
+                <!--inner row started-->
+                <div class="row">
+                    <div class="error-box text-center" style="padding-top:10px; font-size:14px;"><span id ="check_username" class="open-sans text-center" >{{error}}</span></div>
+                 <form method="POST" enctype="multipart/form-data" action="/dairy_website/add_animal_data_in_database/ " onsubmit=" return validation()">
+                  {% csrf_token %}
+                      <!--col-md-4-->
+                      <div class="col-md-5 col-xs-12">
+                        <!--img-box-->
+                        <div class="img-box" id="animate-box">
+                            <i class="fa  fa-5x fa-picture-o" aria-hidden="true"></i>
+                            <p class="popin h4  black text-bold text-capitalize  image-upload-icon" > + upload image</p>
+                            <input type="file"   class="popin"  name="animal_image" onchange="readURL(this);" id="for_img">
+                            <img id="blah" src="#" style="position:relative; top:-133px; left:-1px; z-index:1; " class="img-responsive">
+                        </div><!--end img-box-->
+                      </div><!--end col-md-4-->
+                      <!--col-md-8-->
+                      <div class="col-md-7 col-xs-12 animal-detail-area margin-top-phn">
+                        <table>
+                          <tr>
+                            <td> <label >Tag number</label></td>
+                            <td>
+                              <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Enter tag number" name="tag_number" id="tag_no">
+                                   <input type="hidden" name="animal_type_age" id="animal_type_age" value="cow or hiefer">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> <label >Date of birth</label></td>
+                            <td>
+                              <div class="form-group">
+                                <input type="date" class="" name="animal_dob" id="animal_dob">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> <label >body weight</label></td>
+                            <td>
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter body weight" name="body_weight" id="body_weight">
+                              </div>
+                              </td>
+                          </tr>
+                          <tr>
+                            <td> <label>breed type</label></td>
+                            <td>
+                              <div class="form-group">
+                                <select name="breed_type" id="breed_type">
+                                  <option selected="" disabled="">select breed type</option>
+                                  <option value="hf"> H.F.</option>
+                                  <option value="jearsy" >jearsy</option>
+                                  <option value="gir">gir</option>
+                                </select>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="no-calf">
+                            <td> <label >current lactation</label></td>
+                            <td>
+                              <div class="form-group">
+                                 <input type="text" class="form-control" placeholder="Enter lactation number" name="current_lactation" id="current_lactation">
+                              </div>
+                              </td>
+                          </tr>
+                          <tr class="no-calf">
+                            <td> <label >last calving date</label></td>
+                            <td>
+                              <div class="form-group">
+                                <input type="date" class="  " placeholder="Enter tag number" name="last_calving_date" id="last_calving_date">
+                              </div>
+                              </td>
+                          </tr>
+                          <tr class="no-calf">
+                            <td> <label >is cattle inseminated? &nbsp;  &nbsp;&nbsp;&nbsp;</label></td>
+                            <td>
+                             <div class="form-group">
+                                <input type="radio" name="is_cattle_inseminated" value="yes" id="is_cattle_inseminated">
+                                <span>yes</span>
+                                <input type="radio" name="is_cattle_inseminated" value="no" id="is_cattle_not_inseminated">
+                                <span style="margin:0;">no</span>
+
+                             </div>
+                            </td>
+                          </tr>
+                          <tr class="no-calf ai_related">
+                            <td> <label >insemination type</label></td>
+                            <td>
+                               <div class="form-group">
+                                 <select name="inseminated_type" id="inseminated_type">
+                                  <option selected="" disabled="">insemination type</option>
+                                  <option value="AI">AI</option>
+                                  <option value="natural">natural</option>
+                                  <option value="double_AI">Double AI</option>
+                                </select>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="no-calf ai_related">
+                            <td> <label >Bull details</label></td>
+                            <td>
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter Bull details Brand/Name/code" name="bull_details" id="bull_details">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="no-calf ai_related" >
+                            <td > <label >insemination date</label></td>
+                            <td>
+                              <div class="form-group">
+                               <input type="date" class="" placeholder="" name="insemination_date" id="insemination_date">
+                              </div>
+                            </td>
+                          </tr>
+                           <tr  >
+                            <td colspan="2" >
+                              <div class="form-group">
+                                <input type="submit"  value="save" class="btn" style=" margin-left:0px; padding:5px 30px;" >
+                              </div>
+                            </td>
+
+                          </tr>
+                        </table>
+
+                      </div><!--end col-md-8-->
+                  </form><!--end form-->
+                </div><!--end inner row-->
+              </div><!--end information-area-->
+            </div><!--end col-md-12-->
+          </div><!--end row-->
+
+<!--===========================================deworwing area========================================================-->
+          <!--row started-->
+          <div class="row">
+            <div class="col-md-12">
+              <!--information-heading-->
+                <!-- inner row-->
+                <div class="row information-heading" id=vaccination-heading>
+                  <div class="col-md-12">
+                    <p  class="text-capitalize mon"> vaccination and deworming</p>
+
+                  </div><!--end inner row1-->
+                  <!--end information-heading-->
+                </div><!--end row-->
+              <!--information-area-->
+              <div class="information-area" id="vaccination">
+                <!--inner row started-->
+                <div class="row">
+                  <!--col-md-12-->
+                  <div class="col-md-12">
+                    <!--inner row-->
+                    <div class="row">
+                      <!--vol-md-6-->
+                      <div class="col-md-6 col-xs-12" >
+                         <p  class="text-capitalize mon text-center"> vaccination </p>
+                          <div class="error-box text-center" style="padding-top:10px; font-size:14px;">
+                              <span id ="error_in_vaccination" class="open-sans text-center" >{{vaccination_error}}</span>
+                          </div>
+                          <form method="POST"  action="/dairy_website/add_vaccination_in_database/ " onsubmit=" return vaccination_validation()">
+                              {% csrf_token %}
+                            <table>
+                                <tr>
+                                    <td><label>tag number</label></td>
+                                    <td>
+                                    <input type="text" placeholder="Enter tag number" name="tag_no" id="tag_no_for_vaccination">
+                                </td>
+                                </tr>
+
+                                <tr>
+                                  <td > <label  style="margin-bottom:20px;">vaccination type</label></td>
+                                  <td>
+                                      <select name="vaccination_type" id="vaccination_type">
+                                          <option selected="" disabled="" >Select vaccination type</option>
+                                          <option value="theileria" >theileria</option>
+                                          <option value="haemorhaggic speticaemia" >haemorhaggic speticaemia</option>
+                                          <option value="brucellosis" >brucellosis</option>
+                                          <option value="black quarter" >black quarter</option>
+                                          <option value="foot and mouth disease" >foot and mouth disease</option>
+                                        </select>
+                                  </td>
+                                </tr>
+                                <tr>
+                                     <td> <label  > date</label></td>
+                                    <td><input type="date" name="vaccination_date" id="vaccination_date" oninput="change_due()"></td>
+                                </tr>
+
+                                <tr>
+                                     <td> <label style="margin-bottom:20px;"> due date</label></td>
+                                    <td><input type="date" name="due_date" id="due_date" readonly></td>
+                                </tr>
+                                 <tr>
+                                    <td colspan="2">
+                                        <input type="checkbox"  name="apply_to_all_animals" value="yes"
+                                        class="apply_to_all_animals" onclick="to_all()">
+                                        <input type="hidden"  id="for_check_vaccination" name="for_check_v" value="yes">
+                                        <label style="float:left;padding-left:20px;"> Apply to all animals</label>
+                                        <br clear="both">
+                                        </td>
+                                </tr>
+                                 <tr>
+                                    <td><input type="submit" value="save"> </td>
+                                </tr>
+
+                              </table>
+
+                            </form>
+
+                      </div><!--end col-md-6-->
+                       <!--vol-md-6-->
+                      <div class="col-md-6 col-xs-12 " >
+                         <p  class="text-capitalize mon text-center"> deworming </p>
+                          <div class="error-box text-center" style="padding-top:10px; font-size:14px;">
+                              <span id ="error_in_de" class="open-sans text-center" >{{de_error}}</span>
+                          </div>
+                         <form  method="POST"  action="/dairy_website/add_deworming_in_database/ " onsubmit=" return de_validation()">
+                             {% csrf_token %}
+                            <table>
+                                <tr>
+                                    <td><label>tag number</label></td>
+                                    <td>
+                                    <input type="text" placeholder="Enter tag number" name="tag_no" id="tag_no_for_de">
+
+                                </td>
+                                </tr>
+                              <tr>
+                                 <td > <label  >date</label></td>
+                                 <td><input type="date" name="deworming_date" id="deworming_date" oninput="change_due_deworming()" ></td>
+                              </tr>
+                                <tr>
+                                    <td> <label > boluse name</label></td>
+                                     <td>
+                                         <input type="text" class="form-control" placeholder="Enter boulse name"  name="medicine_name" id="medicine_name">
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <td> <label >due  date</label></td>
+                                    <td><input type="date"  name="due_date" id="deworming_due_date"  ></td>
+                                </tr>
+                                 <tr>
+                                    <td colspan="2">
+                                        <input type="checkbox" style="float:left; width:18px; margin-top:3px;" name="apply_to_all_animals" value="no"
+                                        class="apply_to_all_animals_de" onclick="to_all_de()">
+                                        <input type="hidden" name="for_check_de" id="for_check_de" value="no">
+                                        <label style="float:left;padding-left:20px;"> Apply to all animals</label>
+                                        </td>
+                                </tr>
+                                <tr >
+                                    <td>
+                                        <input type="submit"  value="save" class="btn "  >
+                                  </td>
+
+                                </tr>
+                              </table>
+                            </form>
+
+                      </div><!--end col-md-5-->
+
+
+                    </div><!--end inner-row-->
+                  </div><!--end col-md-12-->
+                </div><!--end inner row-->
+              </div><!--end information-area-->
+            </div><!--end col-md-12-->
+          </div><!--end row-->
+        </div><!--end animal-data-->
+    </div><!--end animal detail-->
+
+        
+    <!--end row-->
+<!--end row-->
+       <div class="row" style="margin-top:120px;">
+      <footer class="black-bg  visible-xs" id="footer-for-mobile">
+        <span>design with  <img src="{% static 'dairy_website/image/heartimg.png'%} " > by amritpal singh</span>
+      </footer>
+      <!--footer-->
+      <footer class="black-bg" id="footer-lappy" style="margin-top:60px;">
+        <!--row-->
+        <div class="row">
+          <!--col-md-8-->
+          <div class="col-md-8 col-md-offset-2">
+              <!--footer logo-->
+              <div class="footer-logo">
+                <div class="line"></div>
+                 <img src="{% static 'dairy_website/image/logo8.png'%} "  class="img-responsive">
+                  <div class="line"></div>
+              </div><!--end footer-logo-->
+
+          </div><!--col-md-8 end--->
+        </div><!--end row-->
+        <!--row start-->
+        <div class="row">
+          <!--col-md-8-->
+          <div class="col-md-6 col-md-offset-3">
+            <!--footer nav-->
+            <div class="footer-nav">
+                <ul >
+                  <li class="lato-font decrease-padding  move"><a href="/dairy_website/goto_home" >Home</a></li>
+                  <li class="lato-font decrease-padding move"><a href="/dairy_website/goto_animal_record">Animal record</a></li>
+                  <li class="lato-font decrease-padding move"><a href="/dairy_website/goto_milk_record">Milk record</a></li>
+                  <li class="lato-font decrease-padding move"><a href="/dairy_website/goto_ask">Ask a friend</a></li>
+                  <li class="lato-font decrease-padding move"><a href="/dairy_website/goto_login" >logout</a></li>
+                </ul>
+            </div><!--end footer nav-->
+          </div><!--end col-md-8-->
+        </div><!--end row-->
+      </footer><!--end footer-->
+    </div><!--end row-->
+      
+
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    function change_due(){
+        var a = document.getElementById("vaccination_date").value;
+        document.getElementById("due_date").value = a;
+        document.getElementById("due_date").stepUp(91);
+
+    }
+    function change_due_deworming(){
+        var a = document.getElementById("deworming_date").value;
+        document.getElementById("deworming_due_date").value = a;
+        document.getElementById("deworming_due_date").stepUp(91);
+
+    }
+    function to_all() {
+        var txt;
+
+            if (confirm("Are You Sure To Apply This For All Animals?")) {
+                txt = "yes";
+                $('.apply_to_all_animals').attr('checked', true);
+                $('#tag_no_for_vaccination').css('background','lightgrey');
+                document.getElementById("for_check_vaccination").value = "yes";
+            } else {
+                txt = "You pressed Cancel!";
+                $('.apply_to_all_animals').attr('checked', false);
+                $('#tag_no_for_vaccination').css('background','white');
+                 document.getElementById("for_check_vaccination").value = "no";
+            }
+    }
+
+
+     function to_all_de() {
+            if (confirm("Are You Sure To Apply This For All Animals?")) {
+                txt = "You pressed OK!";
+                $('.apply_to_all_animals_de').attr('checked', true);
+                $('#tag_no_for_de').css('background','lightgrey');
+                document.getElementById("for_check_de").value = "yes";
+            } else {
+                txt = "You pressed Cancel!";
+                $('.apply_to_all_animals_de').attr('checked', false);
+                $('#tag_no_for_de').css('background','white');
+               document.getElementById("for_check_de").value = "no";
+            }
+
+    }
+        function validation(){
+            var tag_no = document.getElementById('tag_no').value;
+            var animal_dob = document.getElementById('animal_dob').value;
+            var body_weight = document.getElementById('body_weight').value;
+            var breed_type = document.getElementById('breed_type').value;
+            var current_lactation = document.getElementById('current_lactation').value;
+            var last_calving_date = document.getElementById('last_calving_date').value;
+            var inseminated_type = document.getElementById('inseminated_type').value;
+            var bull_details = document.getElementById('bull_details').value;
+            var for_img = document.getElementById('for_img').value;
+            var insemination_date = document.getElementById('insemination_date').value;
+            var is_calf = document.getElementById('animal_type_age').value;
+            var is_in = $(".ai_related").css("visibility");
+
+            if(for_img == ""){
+                document.getElementById('check_username').innerHTML="** Please choose image ";
+                return false;
+            }
+
+            if(tag_no == ""){
+                document.getElementById('check_username').innerHTML="** Please enter tag number ";
+                return false;
+            }
+             if(animal_dob == ""){
+                document.getElementById('check_username').innerHTML="** Please enter animal date of birth ";
+                return false;
+            }
+
+
+             if(body_weight == ""){
+                document.getElementById('check_username').innerHTML="** Please enter animal weight ";
+                return false;
+            }
+
+            if(isNaN(body_weight)){
+                document.getElementById('check_username').innerHTML="** please enter a valid body weight";
+               return false;
+            }
+
+            if(breed_type == "select breed type"){
+                document.getElementById('check_username').innerHTML="** Please select animal breed ";
+                return false;
+            }
+
+            if(is_calf != "calf"){
+                 if(current_lactation == ""){
+                    document.getElementById('check_username').innerHTML="** Please enter current lactation ";
+                    return false;
+                }
+
+                if(isNaN(current_lactation)){
+                    document.getElementById('check_username').innerHTML="** Please enter valid current lactation ";
+                    return false;
+                }
+
+
+                 if(last_calving_date == ""){
+                    document.getElementById('check_username').innerHTML="** Please enter last calving date ";
+                    return false;
+                }
+            var last_calving_date_m = last_calving_date.split("-").join("/");
+            var last_calving_date_m1 = new Date(last_calving_date_m)
+            if (last_calving_date_m1.getMonth() > g6.getMonth()){
+                  if ((last_calving_date_m1.getDate() > g6.getDate())|| (last_calving_date_m1.getMonth() > g6.getMonth())){
+                    document.getElementById('check_username').innerHTML="** Please select correct date";
+                    return false;
+                    }
+            }
+            if (last_calving_date_m1.getDate() > g6.getDate()){
+                    document.getElementById('check_username').innerHTML="** Please select correct date";
+                    return false;
+                    }
+
+                if(is_in == "visible"){
+                     if(inseminated_type == "insemination type"){
+                        document.getElementById('check_username').innerHTML="** Please enter inseminated type ";
+                        return false;
+                    }
+
+                     if(bull_details == ""){
+                        document.getElementById('check_username').innerHTML="** Please enter bull details ";
+                        return false;
+                    }
+
+                    if(insemination_date == ""){
+                        document.getElementById('check_username').innerHTML="** Please enter insemination date ";
+                        return false;
+                    }
+                    var insemination_date_m = insemination_date.split("-").join("/");
+                    var insemination_date_m1 = new Date(insemination_date_m)
+                    if (insemination_date_m1.getMonth() > g6.getMonth()){
+                          if ((insemination_date_m1.getDate() > g6.getDate())|| (insemination_date_m1.getMonth() > g6.getMonth())){
+                            document.getElementById('check_username').innerHTML="** Please select correct date";
+                            return false;
+                            }
+                    }
+                    if (insemination_date_m1.getDate() > g6.getDate()){
+                            document.getElementById('check_username').innerHTML="** Please select correct date";
+                            return false;
+                    }
+
+                }
+            }
+
+            if(is_calf == "cow or hiefer"){
+                 if(current_lactation == ""){
+                    document.getElementById('check_username').innerHTML="** Please enter current lactation ";
+                    return false;
+                }
+
+                if(isNaN(current_lactation)){
+                    document.getElementById('check_username').innerHTML="** Please enter valid current lactation ";
+                    return false;
+                }
+
+
+                 if(last_calving_date == ""){
+                    document.getElementById('check_username').innerHTML="** Please enter last calving date ";
+                    return false;
+                }
+                if(is_in == "visible"){
+                     if(inseminated_type == "insemination type"){
+                        document.getElementById('check_username').innerHTML="** Please enter inseminated type ";
+                        return false;
+                    }
+
+                     if(bull_details == ""){
+                        document.getElementById('check_username').innerHTML="** Please enter bull details ";
+                        return false;
+                    }
+
+                    if(insemination_date == ""){
+                        document.getElementById('check_username').innerHTML="** Please enter insemination date ";
+                        return false;
+                    }
+                }
+            }
+        }
+        function vaccination_validation(){
+            var tag_no_for_vaccination = document.getElementById('tag_no_for_vaccination').value;
+            var vaccination_type = document.getElementById('vaccination_type').value;
+            var vaccination_date = document.getElementById('vaccination_date').value;
+
+
+            if(tag_no_for_vaccination == ""){
+                document.getElementById('error_in_vaccination').innerHTML="** Please enter tag number ";
+                return false;
+            }
+            if(vaccination_type == "Select vaccination type"){
+                document.getElementById('error_in_vaccination').innerHTML="** Please select vaccination type ";
+                return false;
+            }
+             if(vaccination_date == ""){
+                document.getElementById('error_in_vaccination').innerHTML="** Please enter vaccination date ";
+                return false;
+             }
+              var nowDate = new Date();
+            var date = nowDate.getFullYear()+'/'+(nowDate.getMonth()+1)+'/'+nowDate.getDate();
+            var g4 = vaccination_date.split("-").join("/");
+            var g5 = new Date(g4)
+            var g6 = new Date(date)
+            if (g5.getMonth() > g6.getMonth()){
+                  if ((g5.getDate() > g6.getDate())|| (g5.getMonth() > g6.getMonth())){
+                    document.getElementById('error_in_vaccination').innerHTML="** Please select correct date";
+                    return false;
+                    }
+            }
+            if (g5.getDate() > g6.getDate()){
+                    document.getElementById('error_in_vaccination').innerHTML="** Please select correct date";
+                    return false;
+                    }
+
+
+        }
+
+        function de_validation(){
+            var tag_no_for_de = document.getElementById('tag_no_for_de').value;
+            var medicine_name = document.getElementById('medicine_name').value;
+            var deworming_date = document.getElementById('deworming_date').value;
+
+
+            if(tag_no_for_de == ""){
+                document.getElementById('error_in_de').innerHTML="** Please enter tag number ";
+                return false;
+            }
+            if(deworming_date == ""){
+                document.getElementById('error_in_de').innerHTML="** Please enter  deworming date ";
+                return false;
+             }
+              var nowDate = new Date();
+            var date = nowDate.getFullYear()+'/'+(nowDate.getMonth()+1)+'/'+nowDate.getDate();
+            var g4 = deworming_date.split("-").join("/");
+            var g5 = new Date(g4)
+            var g6 = new Date(date)
+            if (g5.getMonth() > g6.getMonth()){
+                  if ((g5.getDate() > g6.getDate())|| (g5.getMonth() > g6.getMonth())){
+                    document.getElementById('error_in_de').innerHTML="** Please select correct date";
+                    return false;
+                    }
+            }
+            if (g5.getDate() > g6.getDate()){
+                    document.getElementById('error_in_de').innerHTML="** Please select correct date";
+                    return false;
+                    }
+
+
+            if(medicine_name == ""){
+                document.getElementById('error_in_de').innerHTML="** Please enter medicin name  ";
+                return false;
+            }
+
+        }
+</script>
+ 
+
+
+<!--============================================script for counter===================================================-->
+    <script>
+        jQuery(document).ready(function($) {
+            $('.counter').counterUp({
+                delay:  50,
+                time: 1000,
+            });
+        });
+    </script>
+<!--============================================script for animation=================================================-->
+    <script>
+        new WOW().init();
+    </script>
+<!--============================================script for show and hide=============================================-->
+    <script>
+    $('html, body').animate({scrollTop:0}, 100);
+
+     var for_vacci = $('#error_in_vaccination').text();
+     var for_de = $('#error_in_de').text();
+     var for_basic = $('#check_username').text();
+
+    if(for_basic != ""){
+        $('html, body').animate({scrollTop:600}, 1500);
+    }
+    if(for_vacci != ""){
+        $('html, body').animate({scrollTop:1400}, 2000);
+    }
+    if(for_de != ""){
+        $('html, body').animate({scrollTop:1400}, 2000);
+    }
+        $('#calf-line').hide();
+        $('#cow-line').hide();
+        $('#hiefer-line').hide();
+        $('.ai_related').css('visibility',"hidden");
+
+      $('#vaccination-heading').click(function(){
+        $('#vaccination').toggle(1000,);
+      });
+
+       $('#is_cattle_inseminated').click(function(){
+        $('.ai_related').css("visibility","visible");
+      });
+       $('#is_cattle_not_inseminated').click(function(){
+        $('.ai_related').css("visibility","hidden");
+      });
+
+      $('#basic-heading').click(function(){
+          $('#basic').toggle(1000,);
+      });
+
+      $('#calf-button').click(function(){
+        $('.selection-area').hide(1000);
+        $('#calf-line').show(1500);
+        $('.no-calf').hide(1000);
+         var animal_type = $(this).text()
+         $('#animal_type_age').val(animal_type)
+        $('#animate-box').animate({height:'280px'}, 1500);
+
+      });
+
+        $('#hiefer-button').click(function(){
+            $('.selection-area').hide(1000);
+            $('#hiefer-line').show(1500);
+             var animal_type = $(this).text()
+             $('#animal_type_age').val(animal_type)
+
+
+        });
+        $('#cow-button').click(function(){
+            $('.selection-area').hide(1000);
+            $('#cow-line').show(1500);
+            var animal_type = $(this).text()
+            $('#animal_type_age').val(animal_type)
+
+
+        });
+
+
+        $(function () {
+
+
+          $(document).scroll(function () {
+              var x = $(window).scrollTop();
+              var nav = $("#logo");
+              var size_nav = $("#for-scroll")
+              var li_container = size_nav.children("#col-md-9")
+              var tabs = $(".decrease-padding")
+              var nav_bg = $(".navbar-inverse")
+              if(x>=40){
+                nav.hide(800);
+                tabs.css("padding","2px 7px 2px 7px")
+                li_container.removeClass("col-md-9")
+                li_container.addClass("col-md-offset-2")
+                nav_bg.css("background","rgba(14, 15, 14 ,93%")
+
+
+              }
+              else{
+                   nav.show(800);
+                   tabs.css("padding","35px 7px  20px 7px")
+                   li_container.addClass("col-md-9")
+                  li_container.removeClass("col-md-offset-2")
+                   nav_bg.css("background","rgb(14, 15, 14 ")
+
+              }
+
+
+
+          });
+          $("#greetings").hide()
+          var greeting_text = $("#greetings").children("p").text()
+          if (greeting_text.length>0){
+             $("#greetings").show(1500)
+
+          }
+        });
+
+    </script>
+
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="{% static 'dairy_website/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'dairy_website/js/jquery.counterup.js' %}"></script>
+    <script src="{% static 'dairy_website/js/wow.js' %}"></script>
+    <script src="{% static 'dairy_website/js/wow.min.js' %}"></script>
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="{% static 'dairy_website/js/bootstrap.min.js' %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'dairy_website/js/ie10-viewport-bug-workaround.js' %}"></script>
+  </body>
+</html>
